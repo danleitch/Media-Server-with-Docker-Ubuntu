@@ -63,6 +63,10 @@ http://127.0.0.1:32400/web
 Once you are into Plex go through to 'Settings' then down to remote access and enable "remote access", This is very important! This will be the only time you will have to do this.
 
 That's it you are now done. you can access you server through https://app.plex.tv from anywhere.
+
+To set up Rclone simply copy 
+
+sudo rclone config
 "
 
 echo "Portainer's interface - http://$(hostname -I | awk '{ print $1 }'):9000"
