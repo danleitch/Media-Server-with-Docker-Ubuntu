@@ -18,7 +18,7 @@ cd ~ ; pwd
 
 echo "INSTALLING PLEX "
 {
-docker run  -d  --name plex  --network=host  -e TZ="Europe/London"  -v ~/Documents/Docker/plex/database:/config  -v ~/Documents/Docker/plex/temp:/transcode  -v /:/Media  plexinc/pms-docker
+docker run  -d  --name plex  --network=host  -e TZ="Europe/London"  -v ~/Documents/Docker/plex/database:/config  -v ~/Documents/Docker/plex/temp:/transcode  -v /:/Media --restart unless-stopped  plexinc/pms-docker:latest
 }&> /dev/null
 echo "INSTALLING WATCHTOWER"
 {
