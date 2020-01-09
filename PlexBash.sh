@@ -37,6 +37,11 @@ echo "INSTALLING PORTIANER"
 docker run -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 }&> /dev/null
 
+echo "INSTALLING RCLONE"
+{
+curl https://rclone.org/install.sh | sudo bash
+}&> /dev/null
+
 echo "Starting her up for you chief"
 {
 docker start $(docker ps -q) 
