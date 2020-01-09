@@ -73,3 +73,6 @@ echo "Portainer's interface - http://$(hostname -I | awk '{ print $1 }'):9000"
 
 #echo "Plex user address - http://$(hostname -I | awk '{ print $1 }'):32400"
 
+
+#CREDIT TO u/WASTECH from Reddit for his work on this.
+
