@@ -51,16 +51,19 @@ docker start $(docker ps -q)
 echo "ALL DONE"
 echo "ALL DONE"
 echo "ALL DONE"
-echo " You will need to access your plex server and set it up remote access on it. In order to route through to it you will need to follow
-my instructions open up the terminal on you pc your working on and copy
+echo "You will need to access your new Plex server and set it up remote access on it. In order to route through to it you will need to follow
+my instructions open up your pc terminal and copy
+
 ssh -L 127.0.0.1:32400:127.0.0.1:32400 root@$(hostname -I | awk '{ print $1 }') 
-Once you are in go through to 'Settings' then down to remote access and enable remote access.
 
-That it you are now done. you can access you server through https://app.plex.tv
+You will need to enter your username and password - from there you will need to goto your broswer and enter
+
+http://127.0.0.1:32400/web
+
+Once you are into Plex go through to 'Settings' then down to remote access and enable "remote access", This is very important! This will be the only time you will have to do this.
+
+That's it you are now done. you can access you server through https://app.plex.tv from anywhere.
 "
-
-
-
 
 echo "Portainer's interface - http://$(hostname -I | awk '{ print $1 }'):9000"
 
