@@ -80,19 +80,29 @@ echo "ALL DONE"
 echo "ALL DONE"
 echo "Your new Docker services are up and running
 You can access this from this PC through THE FOLLOWING ADDRESS:
+___________________________________________________________________
 
-Portainer: http://127.0.0.1:9000
-Plex: http://127.0.0.1:32400/web 
-Sonarr: http://127.0.0.1:8989
-Radarr: http://127.0.0.1:7878
-qBittorrent: http://127.0.0.1:8080
-SABnzbd: http://127.0.0.1:8888
+Portainer: http://127.0.0.1:9000 - Docker Management User Interface.
+
+Plex: http://127.0.0.1:32400/web -  Your personal media play
+
+Sonarr: http://127.0.0.1:8989 - Sonarr is a multi-platform app to search, download, and manage TV shows.
+
+Radarr: http://127.0.0.1:7878 - Like Sonarr but for movies
+
+qBittorrent: http://127.0.0.1:8080 - qBittorrent is a cross-platform free and open-source BitTorrent client.
+
+SABnzbd: http://127.0.0.1:8888 - SABnzbd is a binary newsgroup downloader. The program simplifies the downloading verifying and extracting of files from Usenet.
+
+Jackett: http://127.0.0.1:9117 - Jackett is a mass torrent indexer scraper
+
+___________________________________________________________________
 
 If you have installed this on a 'headless pc' or on a VPS you
-will be able to access these services on your network from the IP" 
+will be able to access these services from the IP" 
 (hostname -I | awk '{ print $1 }')
 
-echo " We are finished here, for those that would like to config Rclone 
+echo "We are finished here, for those that would like to config Rclone 
 simply type 
 
 sudo rclone config
