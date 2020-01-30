@@ -1,7 +1,0 @@
-Here is the command --> 
-
-Copy and Past this in you terminal 
-
-
-sudo git clone https://github.com/Thunder-Chief/VPS-Plex.git && cd VPS-Plex && sudo bash PlexBash.sh
-
