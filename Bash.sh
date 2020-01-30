@@ -88,8 +88,12 @@ If you have installed this on a 'headless pc' or on a VPS you
 will be able to access these services on your network from the IP" 
 (hostname -I | awk '{ print $1 }')
 
+
+
 echo "
 To set up Rclone simply type 
+
+Plex: http://(hostname -I | awk '{ print $1 }'):32400/web
 
 sudo rclone config
 "
