@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Updating Ubuntu "
+echo "Updating System "
 {
 apt-get update
 apt-get upgrade -y 
@@ -77,7 +77,6 @@ echo "Your new Docker services are up and running
 You can access this from this PC through THE FOLLOWING ADDRESS:
 
 Portainer: http://127.0.0.1:9000
-
 Plex: http://127.0.0.1:32400/web 
 Sonarr: http://127.0.0.1:8989
 Radarr: http://127.0.0.1:7878
@@ -88,12 +87,10 @@ If you have installed this on a 'headless pc' or on a VPS you
 will be able to access these services on your network from the IP" 
 (hostname -I | awk '{ print $1 }')
 
-
-
-echo "
-To set up Rclone simply type 
-
-Plex: http://(hostname -I | awk '{ print $1 }'):32400/web
+echo " We are finished here, for those that would like to config Rclone 
+simply type 
 
 sudo rclone config
+
+Happy Watching 
 "
