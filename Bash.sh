@@ -45,12 +45,12 @@ curl https://rclone.org/install.sh | sudo bash
 
 echo "INSTALLING SONARR"
 {
-docker run   --name=sonarr   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London   -e UMASK_SET=022  -p 8989:8989   -v ~/Documents/Docker/sonarr/data:/config   -v /:/Data   --restart unless-stopped   linuxserver/sonarr:latest
+docker run   --name=sonarr   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London   -e UMASK_SET=022  -p 8989:8989   -v ~/Documents/Docker/sonarr/data:/config   -v /:/Data   --restart unless-stopped   linuxserver/sonarr
 }&> /dev/null
 
 echo "INSTALLING RADARR"
 {
-docker run   --name=radarr   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London   -e UMASK_SET=022    -p 7878:7878   -v ~/Documents/Docker/radarr/data:/config   -v /:/Data   --restart unless-stopped linuxserver/radarr:latest
+docker run   --name=radarr   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London   -e UMASK_SET=022    -p 7878:7878   -v ~/Documents/Docker/radarr/data:/config   -v /:/Data   --restart unless-stopped linuxserver/radarr
 }&> /dev/null
 
 echo "JACKETT"
@@ -60,12 +60,12 @@ docker run   --name=jackett   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London 
 
 echo "INSTALLING qBittorrent"
 {
-docker run   --name=qbittorrent   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London   -e UMASK_SET=022   -e WEBUI_PORT=8086   -p 6881:6881   -p 6881:6881/udp   -p 8086:8086   -v ~/Documents/Docker/qbittorrent/config:/config   -v /:/Data   --restart unless-stopped   linuxserver/qbittorrent:latest
+docker run   --name=qbittorrent   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London   -e UMASK_SET=022   -e WEBUI_PORT=8086   -p 6881:6881   -p 6881:6881/udp   -p 8086:8086   -v ~/Documents/Docker/qbittorrent/config:/config   -v /:/Data   --restart unless-stopped   linuxserver/qbittorrent
 }&> /dev/null
 
 echo "INSTALLING SABnzbd"
 {
-docker run   --name=sabnzbd   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London   -p 8888:8080   -p 9090:9090   -v ~/Documents/Docker/sabnzbd/data:/config   -v /:/Data   --restart unless-stopped   linuxserver/sabnzbd:latest
+docker run   --name=sabnzbd   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London   -p 8888:8080   -p 9090:9090   -v ~/Documents/Docker/sabnzbd/data:/config   -v /:/Data   --restart unless-stopped   linuxserver/sabnzbd
 }&> /dev/null
 
 
