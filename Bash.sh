@@ -84,17 +84,17 @@ ___________________________________________________________________
 
 Portainer: http://127.0.0.1:9000 - Docker Management User Interface.
 
-Plex: http://127.0.0.1:32400/web -  Your personal media play
+Plex: http://127.0.0.1:32400/web -  Your personal media play.
 
 Sonarr: http://127.0.0.1:8989 - Sonarr is a multi-platform app to search, download, and manage TV shows.
 
-Radarr: http://127.0.0.1:7878 - Like Sonarr but for movies
+Radarr: http://127.0.0.1:7878 - Like Sonarr but for movies.
 
 qBittorrent: http://127.0.0.1:8080 - qBittorrent is a cross-platform free and open-source BitTorrent client.
 
 SABnzbd: http://127.0.0.1:8888 - SABnzbd is a binary newsgroup downloader. The program simplifies the downloading verifying and extracting of files from Usenet.
 
-Jackett: http://127.0.0.1:9117 - Jackett is a mass torrent indexer scraper
+Jackett: http://127.0.0.1:9117 - Jackett is a mass torrent indexer scraper.
 
 ___________________________________________________________________
 
@@ -103,9 +103,11 @@ will be able to access these services from the IP"
 (hostname -I | awk '{ print $1 }')
 
 echo "We are finished here, for those that would like to config Rclone 
-simply type 
+simply type, 
 
 sudo rclone config
+
+if you do not know what what Rclone is do not worry about it. 
 
 Happy Watching 
 "
