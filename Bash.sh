@@ -88,11 +88,11 @@ If you have installed this on a 'headless pc' you will be able to access these s
 
 Portainer: http://(hostname -I | awk '{ print $1 }'):9000
 
-Plex: http://(hostname -I | awk '{ print $1 }'):32400/web 
-Sonarr: http://(hostname -I | awk '{ print $1 }'):8989
-Radarr: http://(hostname -I | awk '{ print $1 }'):7878
-qBittorrent: http://(hostname -I | awk '{ print $1 }'):8080
-SABnzbd: http://(hostname -I | awk '{ print $1 }'):9090
+Plex: http:// (hostname -I | awk '{ print $1 }'):32400/web 
+Sonarr: http:// (hostname -I | awk '{ print $1 }'):8989
+Radarr: http:// (hostname -I | awk '{ print $1 }'):7878
+qBittorrent: http:// (hostname -I | awk '{ print $1 }'):8080
+SABnzbd: http:// (hostname -I | awk '{ print $1 }'):9090
 
 To set up Rclone simply type 
 
