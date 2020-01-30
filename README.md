@@ -4,4 +4,4 @@ This is a single command that will install a Complete Media Center package - Ple
 Copy and Past this command into your terminal 
 Here is the command --> 
 
-sudo git clone https://github.com/Thunder-Chief/VPS-Plex.git && cd Media-Server-with-Docker-Ubuntu && sudo bash Bash.sh
+sudo git clone https://github.com/Thunder-Chief/Media-Server-with-Docker-Ubuntu.git && cd Media-Server-with-Docker-Ubuntu && sudo bash Bash.sh
