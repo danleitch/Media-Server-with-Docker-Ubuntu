@@ -85,9 +85,10 @@ qBittorrent: http://127.0.0.1:8080
 SABnzbd: http://127.0.0.1:9090
 
 If you have installed this on a 'headless pc' or on a VPS you
-will be able to access these services on your network from the IP" (hostname -I | awk '{ print $1 }').
+will be able to access these services on your network from the IP" 
+(hostname -I | awk '{ print $1 }')
 
-echo"
+echo "
 To set up Rclone simply type 
 
 sudo rclone config
