@@ -18,7 +18,7 @@ cd ~ ; pwd
 
 echo "INSTALLING PLEX "
 {
-docker run  -d  --name plex  --network=host  -e TZ="Europe/London"  -v ~/Documents/Docker/plex/database:/config  -v ~/Documents/Docker/plex/temp:/transcode  -v /:/Media --restart unless-stopped  plexinc/pms-docker:latest
+docker run  -d  --name plex  --network=host  -e TZ="Europe/London"  -v ~/Documents/Docker/plex/database:/config  -v ~/Documents/Docker/plex/temp:/transcode  -v /:/Data --restart unless-stopped  plexinc/pms-docker:latest
 }&> /dev/null
 
 echo "Adjusting the firewall"
@@ -42,6 +42,28 @@ echo "INSTALLING RCLONE"
 curl https://rclone.org/install.sh | sudo bash
 }&> /dev/null
 
+
+echo "INSTALLING SONARR"
+{
+docker create   --name=sonarr   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London   -e UMASK_SET=022  -p 8989:8989   -v ~/Documents/Docker/sonarr/data:/config   -v /:/Data   --restart unless-stopped   linuxserver/sonarr:latest
+}&> /dev/null
+
+echo "INSTALLING RADARR"
+{
+docker create   --name=radarr   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London   -e UMASK_SET=022    -p 7878:7878   -v ~/Documents/Docker/radarr/data:/config   -v /:/Data   --restart unless-stopped 
+}&> /dev/null
+
+echo "INSTALLING qBittorrent"
+{
+docker create   --name=qbittorrent   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London   -e UMASK_SET=022   -e WEBUI_PORT=8080   -p 6881:6881   -p 6881:6881/udp   -p 8080:8080   -v ~/Documents/Docker/qbittorrent/config:/config   -v /:/Data   --restart unless-stopped   linuxserver/qbittorrent:latest
+}&> /dev/null
+
+echo "INSTALLING SABnzbd"
+{
+docker create   --name=sabnzbd   -e PUID=1000   -e PGID=1000   -e TZ=Europe/London   -p 8080:8080   -p 9090:9090   -v ~/Documents/Docker/sabnzbd/data:/config   -v /:/Data   --restart unless-stopped   linuxserver/sabnzbd:latest
+}&> /dev/null
+
+
 echo "Starting her up for you chief"
 {
 docker start $(docker ps -q) 
@@ -51,28 +73,28 @@ docker start $(docker ps -q)
 echo "ALL DONE"
 echo "ALL DONE"
 echo "ALL DONE"
-echo "You will need to access your new Plex server and set it up remote access on it. In order to route through to it you will need to follow
-my instructions open up your pc terminal and copy
+echo "Your new Docker services are up and running
+You can access this from this PC through THE FOLLOWING ADDRESS:
 
-ssh -L 127.0.0.1:32400:127.0.0.1:32400 root@$(hostname -I | awk '{ print $1 }') 
+Portainer: http://127.0.0.1:9000
 
-You will need to enter your username and password - from there you will need to goto your broswer and enter
+Plex: http://127.0.0.1:32400/web 
+Sonarr: http://127.0.0.1:8989
+Radarr: http://127.0.0.1:7878
+qBittorrent: http://127.0.0.1:8080
+SABnzbd: http://127.0.0.1:9090
 
-http://127.0.0.1:32400/web
+If you have installed this on a 'headless pc' you will be able to access these services on your network from.
 
-Once you are into Plex go through to 'Settings' then down to remote access and enable "remote access", This is very important! This will be the only time you will have to do this.
+Portainer: http://(hostname -I | awk '{ print $1 }'):9000
 
-That's it you are now done. you can access you server through https://app.plex.tv from anywhere.
+Plex: http://(hostname -I | awk '{ print $1 }'):32400/web 
+Sonarr: http://(hostname -I | awk '{ print $1 }'):8989
+Radarr: http://(hostname -I | awk '{ print $1 }'):7878
+qBittorrent: http://(hostname -I | awk '{ print $1 }'):8080
+SABnzbd: http://(hostname -I | awk '{ print $1 }'):9090
 
-To set up Rclone simply copy 
+To set up Rclone simply type 
 
 sudo rclone config
 "
-
-echo "Portainer's interface - http://$(hostname -I | awk '{ print $1 }'):9000"
-
-#echo "Plex user address - http://$(hostname -I | awk '{ print $1 }'):32400"
-
-
-#CREDIT TO u/WASTECH from Reddit for his work on this.
-
