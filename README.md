@@ -7,4 +7,4 @@ Here is the command -->
 Copy and Past this command into your terminal 
 
 
-sudo git clone https://github.com/Thunder-Chief/VPS-Plex.git && cd VPS-Plex && sudo bash PlexBash.sh
+sudo git clone https://github.com/Thunder-Chief/VPS-Plex.git && cd Media-Server-with-Docker-Ubuntu && sudo bash PlexBash.sh
