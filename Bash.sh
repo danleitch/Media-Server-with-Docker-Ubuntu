@@ -1,30 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@Thunder-Chief
-Thunder-Chief /
-Media-Server-with-Docker-Ubuntu
-
-1
-0
-
-    1
-
-Code
-Issues 0
-Pull requests 0
-Actions
-Projects 0
-Wiki
-Security
-Insights
-Settings
-Media-Server-with-Docker-Ubuntu/Bash.sh
-@Thunder-Chief Thunder-Chief Update Bash.sh dc60dc9 20 hours ago
-113 lines (82 sloc) 3.9 KB
 #!/bin/bash
 
 echo "Updating System "
@@ -85,18 +58,3 @@ sudo rclone config
 if you do not know what what Rclone is do not worry about it. 
 Happy Watching 
 "
-
-    © 2020 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Help
-
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
