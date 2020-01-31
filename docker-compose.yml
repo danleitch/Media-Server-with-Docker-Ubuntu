@@ -3,15 +3,88 @@ services:
   
   
   portainer:
-    image: portainer/portainer
-    container_name: portainer
+    image: "portainer/portainer"
+    container_name: "portainer"
     restart: always
     command: -H unix:///var/run/docker.sock
     ports:
       - "9000:9000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ~/Documents/docker/portainer/data:/data
-      - ~/Documents/docker/shared:/shared
+      - /:/Data
+      - /:/shared
     environment:
-      - TZ="Europe/London"
+      - TZ=Europe/London
+  qbittorrent:
+    image: "linuxserver/qbittorrent"
+    container_name: "qbittorrent"
+    volumes:
+      - ~/Documents/Docker/qbittorrent:/config
+      - /:/Data
+    ports:
+      - "8086:8086"
+      - "6881:6881"
+      - "6881:6881/udp"
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - UMASK_SET=002
+      - WEBUI_PORT=8086
+  sabnzbd: 
+    image: "linuxserver/sabnzbd"
+    container_name: "sabnzbd"
+    volumes:
+      - ~/Documents/Docker/sabnzbd:/config
+      - /:/Data
+    ports:
+        - "8888:8080"
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+  radarr:
+    image: "linuxserver/radarr"
+    container_name: "radarr"
+    volumes:
+      - ~/Documents/Docker/radarr:/config
+      - /:/Data
+      - "/etc/localtime:/etc/localtime:ro"
+    ports:
+      - "7878:7878"
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+  sonarr:
+    image: "linuxserver/sonarr"
+    container_name: "sonarr"
+    volumes:
+      - ~/Documents/Docker/sonarr:/config
+      - /:/Data
+      - "/etc/localtime:/etc/localtime:ro"
+    ports:
+        - "8989:8989"
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+  jackett:
+    image: "linuxserver/jackett"
+    container_name: "jackett"
+    volumes:
+      - ~/Documents/Docker/jackett:/config
+      - ${USERDIR}/Downloads/completed:/downloads
+      - "/etc/localtime:/etc/localtime:ro"
+      - ~/Documents/Docker/shared:/shared
+    ports:
+      - "9117:9117"
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London  
