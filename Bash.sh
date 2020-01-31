@@ -24,6 +24,7 @@ sudo usermod -aG docker ${USER}
 mkdir ~/docker
 setfacl -Rdm g:docker:rwx ~/docker
 chmod -R 775 ~/docker
+docker-compose -f ~/Media-Server-with-Docker-Ubuntu/docker-compose.yml up -d
 
 
 
