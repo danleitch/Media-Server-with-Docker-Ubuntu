@@ -17,15 +17,26 @@ cd ~ ; pwd
 } &> /dev/null
 
 echo "INSTALLING Docker Services"
-
+{
 curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo usermod -aG docker ${USER}
 mkdir ~/docker
 setfacl -Rdm g:docker:rwx ~/docker
 chmod -R 775 ~/docker
+} &> /dev/null
 docker-compose -f ~/Media-Server-with-Docker-Ubuntu/docker-compose.yml up -d
 
+echo "INSTALLING PLEX "
+{
+docker run  -d  --name plex  --network=host  -e TZ="Europe/London"  -v ~/Documents/Docker/plex/database:/config  -v ~/Documents/Docker/plex/temp:/transcode  -v /:/Data --restart unless-stopped  plexinc/pms-docker:latest
+}&> /dev/null
+
+
+echo "Adjusting the firewall"
+{
+iptables -A INPUT -p tcp -d 0/0 -s 0/0 --dport 32400 -j ACCEPT
+}&> /dev/null
 
 
 
