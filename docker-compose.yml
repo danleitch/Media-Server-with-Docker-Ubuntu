@@ -8,10 +8,10 @@ services:
     restart: always
     command: -H unix:///var/run/docker.sock
     ports:
-      - "XXXX:9000"
+      - "9000:9000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ${USERDIR}/docker/portainer/data:/data
-      - ${USERDIR}/docker/shared:/shared
+      - ~/Documents/docker/portainer/data:/data
+      - ~/Documents/docker/shared:/shared
     environment:
-      - TZ=${TZ}
+      - TZ="Europe/London"
