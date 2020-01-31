@@ -25,7 +25,7 @@ services:
       - "8086:8086"
       - "6881:6881"
       - "6881:6881/udp"
-    restart: always
+    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
@@ -40,7 +40,7 @@ services:
       - /:/Data
     ports:
         - "8888:8080"
-    restart: always
+    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
@@ -54,7 +54,7 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
     ports:
       - "7878:7878"
-    restart: always
+    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
@@ -68,7 +68,7 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
     ports:
         - "8989:8989"
-    restart: always
+    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
@@ -82,7 +82,7 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
     ports:
       - "9117:9117"
-    restart: always
+    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
