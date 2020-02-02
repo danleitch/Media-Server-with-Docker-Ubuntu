@@ -16,7 +16,7 @@ usermod -aG docker ${USER}
 cd ~ ; pwd 
 } &> /dev/null
 
-echo "INSTALLING Docker Services"
+echo "Installing your new awesome Docker Services"
 {
 curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
@@ -27,7 +27,7 @@ chmod -R 775 ~/docker
 } &> /dev/null
 docker-compose -f ~/Media-Server-with-Docker-Ubuntu/docker-compose.yml up -d
 
-echo "INSTALLING PLEX "
+echo "Installing Plex "
 {
 docker run  -d  --name plex  --network=host  -e TZ="Europe/London"  -v ~/Documents/Docker/plex/database:/config  -v ~/Documents/Docker/plex/temp:/transcode  -v /:/Data --restart unless-stopped  plexinc/pms-docker:latest
 }&> /dev/null
