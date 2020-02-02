@@ -18,10 +18,10 @@ Note:
 Good to know info.
 
 To edit the docker-compose.yml file 
-**sudo nano ~/Media-Server-with-Docker-Ubuntu/docker-compose.yml
+**sudo nano ~/Media-Server-with-Docker-Ubuntu/docker-compose.yml**
 
 to launch it
-**sudo docker-compose -f ~/Media-Server-with-Docker-Ubuntu/docker-compose.yml up -d
+**sudo docker-compose -f ~/Media-Server-with-Docker-Ubuntu/docker-compose.yml up -d**
 
 Also the great news about this install is that it is too easy to backup.
 First off shutdown the program you wish to back up 
