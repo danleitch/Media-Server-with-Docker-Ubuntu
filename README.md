@@ -31,7 +31,7 @@ ________________________________________________________________________________
 
 Portainer: **http://127.0.0.1:9000** - Docker Management User Interface.
 
-Plex: **http://127.0.0.1:32400/web** -  Your personal media play.
+Plex: **http://127.0.0.1:32400/web** -  Your personal media player.
 
 Sonarr: **http://127.0.0.1:8989** - Sonarr is a multi-platform app to search, download, and manage TV shows.
 
