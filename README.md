@@ -10,7 +10,7 @@ Note:
 
 1.On Portainer's first launch create a Username  & Password and select local. From this point look around for the tab that says containers it should be self-explanatory from there.
 
-2.This Plex container DOES NOT support hardware transcoding - it can though just but exposing the correct hardware in your docker image but every PC is different that is why I left it out. My is up and running well.
+2.This Plex container will NOT support hardware transcoding - it can,  you would need to expose the correct hardware to your docker image but every PC is different that is why I left it out. My is up and running  well so i can confirm it works very well. I'm happy to share on request. 
 
 3.This install is a stock standard install, no special programs here. Changing things would be as docker documentation says.
 
