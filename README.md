@@ -37,7 +37,7 @@ Sonarr: http://127.0.0.1:8989 - Sonarr is a multi-platform app to search, downlo
 
 Radarr: http://127.0.0.1:7878 - Like Sonarr but for movies.
 
-qBittorrent: http://127.0.0.1:8080 - qBittorrent is a cross-platform free and open-source BitTorrent client.
+qBittorrent: http://127.0.0.1:8086 - qBittorrent is a cross-platform free and open-source BitTorrent client.
 
 SABnzbd: http://127.0.0.1:8888 - SABnzbd is a binary newsgroup downloader. The program simplifies the downloading verifying and extracting of files from Usenet.
 
