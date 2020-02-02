@@ -32,6 +32,11 @@ echo "Installing Plex "
 docker run  -d  --name plex  --network=host  -e TZ="Europe/London"  -v ~/Documents/Docker/plex/database:/config  -v ~/Documents/Docker/plex/temp:/transcode  -v /:/Data --restart unless-stopped  plexinc/pms-docker:latest
 }&> /dev/null
 
+echo "Installing Watchtower"
+{
+docker run -d     --name watchtower     -v /var/run/docker.sock:/var/run/docker.sock     containrrr/watchtower
+}&> /dev/null
+
 
 echo "Adjusting the firewall"
 {
