@@ -72,7 +72,7 @@ will be able to access these services from the IP"
 echo "We are finished here, for those that would like to config Rclone 
 simply type, 
 sudo rclone config
-if you do not know what what Rclone is do not worry about it. 
+if you do not know what Rclone is do not worry about it. 
 Please look at the READ ME file =-)
 
 Happy Watching 
