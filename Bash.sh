@@ -25,7 +25,7 @@ mkdir ~/docker
 setfacl -Rdm g:docker:rwx ~/docker
 chmod -R 775 ~/docker
 } &> /dev/null
-docker-compose -f ~/Media-Server-with-Docker-Ubuntu/docker-compose.yml up -d
+docker compose -f ~/Media-Server-with-Docker-Ubuntu/docker-compose.yml up -d 
 
 echo "Installing Plex "
 {
